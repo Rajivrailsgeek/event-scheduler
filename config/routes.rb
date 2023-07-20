@@ -5,7 +5,6 @@ Rails.application.routes.draw do
       mount Sidekiq::Web => '/sidekiq'
     end
 
-
   devise_for :users
   authenticated :user do
     root to: 'home#dashboard', as: :authenticated_root
