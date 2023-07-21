@@ -1,0 +1,28 @@
+
+  <p>
+    <strong>First Name:</strong>
+    <%= @booking.first_name %>
+  </p>
+
+  <p>
+    <strong>Last Name:</strong>
+    <%= @booking.last_name %>
+  </p>
+
+  <p>
+    <strong>Booking Date:</strong>
+    <%= @booking.booking_date %>
+  </p>
+
+  <p>
+    <strong>Billing Address:</strong>
+    <%= @booking.billing_address %>
+  </p>
+
+  <button>
+    <%= link_to "Edit", edit_booking_path(@booking) %>
+  </button>
+
+  <button>
+    <td><%= button_to "Destroy", @booking, method: :delete %></td>
+  </button>
