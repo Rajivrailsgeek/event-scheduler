@@ -1,4 +1,5 @@
-<table class="table">
+<div  class="container">
+  <table class="table">
     <tr>
       <th>First Name</th>
       <th>Last Name</th>
@@ -18,4 +19,9 @@
       </tr>
     <% end %>
   </table>
-  <%= link_to "New Booking", new_booking_path %>
+  <%= button_to 'New Booking', {:controller => "bookings", :action => "new" } , :method=>:get, class:"btn btn-primary" %>
+
+  <% unless @bookings.empty? %>
+    <%= will_paginate @bookings %>
+  <% end %>
+</div>

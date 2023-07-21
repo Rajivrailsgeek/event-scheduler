@@ -100,7 +100,6 @@ GEM
       warden (~> 1.2.3)
     erubi (1.12.0)
     ffi (1.15.5)
-    flatpickr (4.6.13.0)
     friendly_id (5.5.0)
       activerecord (>= 4.0.0)
     globalid (1.1.0)
@@ -208,9 +207,6 @@ GEM
       connection_pool (>= 2.2.5, < 3)
       rack (~> 2.0)
       redis (>= 4.5.0, < 5)
-    simple_form (5.2.0)
-      actionpack (>= 5.2)
-      activemodel (>= 5.2)
     sprockets (4.2.0)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -244,6 +240,7 @@ GEM
     websocket-driver (0.7.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
+    will_paginate (4.0.0)
     xpath (3.2.0)
       nokogiri (~> 1.8)
     zeitwerk (2.6.8)
@@ -258,7 +255,6 @@ DEPENDENCIES
   cssbundling-rails
   debug
   devise (~> 4.8, >= 4.8.1)
-  flatpickr
   friendly_id (~> 5.4, >= 5.4.2)
   image_processing (~> 1.2)
   jbuilder
@@ -271,7 +267,6 @@ DEPENDENCIES
   redis (~> 4.0)
   selenium-webdriver
   sidekiq (~> 6.5, >= 6.5.4)
-  simple_form
   sprockets-rails
   stimulus-rails
   stripe
@@ -279,6 +274,7 @@ DEPENDENCIES
   tzinfo-data
   web-console
   webdrivers
+  will_paginate (~> 4.0)
 
 RUBY VERSION
    ruby 3.1.2p20
