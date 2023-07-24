@@ -19,12 +19,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <!-- Navbar brand -->
       <a class="navbar-brand mt-2 mt-lg-0" href="#">
-        <img
-          src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp"
-          height="15"
-          alt="MDB Logo"
-          loading="lazy"
-        />
+        <%= link_to image_tag("unnameds.png") %>
       </a>
       <!-- Left links -->
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -51,12 +46,14 @@
 
       <!-- Notifications -->
       <div class="dropdown">
+        <%= link_to "JOIN", new_user_registration_path, class: "btn" unless user_signed_in? %>
+        
         <a
           class="text-reset me-3 dropdown-toggle hidden-arrow"
           href="#"
           id="navbarDropdownMenuLink"
           role="button"
-          data-mdb-toggle="dropdown"
+          data-bs-toggle="dropdown"
           aria-expanded="false"
         >
           <i class="fas fa-bell"></i>
@@ -84,7 +81,7 @@
           href="#"
           id="navbarDropdownMenuAvatar"
           role="button"
-          data-mdb-toggle="dropdown"
+          data-bs-toggle="dropdown"
           aria-expanded="false"
         >
           <img
@@ -100,13 +97,16 @@
           aria-labelledby="navbarDropdownMenuAvatar"
         >
           <li>
-            <a class="dropdown-item" href="#">My profile</a>
+            <a class="dropdown-item" href="home#dashboard">My profile</a>
           </li>
           <li>
             <a class="dropdown-item" href="#">Settings</a>
           </li>
           <li>
-            <a class="dropdown-item" href="#">Logout</a>
+            <%= link_to 'Sign In', new_user_session_path, class: "dropdown-item" unless user_signed_in? %>
+          </li>
+          <li>
+            <%= link_to 'Log out', destroy_user_session_path, data: { "turbo-method": :delete } , class: "dropdown-item" if user_signed_in? %>
           </li>
         </ul>
       </div>
