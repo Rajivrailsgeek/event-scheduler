@@ -18,12 +18,11 @@
     <strong>Billing Address:</strong>
     <%= @booking.billing_address %>
   </p>
-  <div>
-    <%= button_to "Edit", {:controller => "bookings", :action => "edit" } , :method=>:get,class:"btn btn-outline-success"%>
-  </div>
-  <div>
-    <%= button_to "Destroy", @booking, method: :delete, class:"btn btn-outline-success" %>
-  </div>
-  <div>
+
+  <div class="d-flex" style="margin: 0;"> 
+    <%= button_to "Edit", {:controller => "bookings", :action => "edit" } , :method=>:get,class:"btn btn-outline-success"%>&nbsp;&nbsp;
+  
+    <%= button_to "Destroy", @booking, method: :delete, class:"btn btn-outline-success" %>&nbsp;&nbsp;
+  
     <%= button_to "Back", {:controller => "bookings", :action => "index" } , :method=>:get, class:"btn btn-outline-success"%>
   </div>
