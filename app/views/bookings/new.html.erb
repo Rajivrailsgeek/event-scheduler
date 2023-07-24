@@ -5,5 +5,5 @@
 <br>
 
 <div>
-  <%= link_to "Back to booking", bookings_path %>
+  <%= button_to "Back", {:controller => "bookings", :action => "index" } , :method=>:get, class:"btn btn-outline-success"%>
 </div>
