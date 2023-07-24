@@ -80,3 +80,5 @@ gem 'byebug'
 
 gem "letter_opener"
 gem 'will_paginate', '~> 4.0'
+gem "jquery-rails"
+

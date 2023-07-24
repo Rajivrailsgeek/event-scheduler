@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html class="h-full antialiased">
   <%= render "shared/head" %>
-  
+
+  <%= favicon_link_tag 'unnameds.png'%>
+
   <body class="font-sans font-normal leading-normal text-gray-800 bg-white flex flex-col min-h-screen ">
 
     <header>
@@ -13,6 +15,7 @@
       <%= content_for?(:content) ? yield(:content) : yield %>
     </main>
   </body>
+
   </div>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>

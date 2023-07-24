@@ -1,25 +1,48 @@
 <%= render layout: "auth_layout", locals: { title: "Sign in" }  do %>
   <%= form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: false }) do |f| %>
+    <section class="vh-100">
+      <div class="container py-5 h-100">
+        <div class="row d-flex align-items-center justify-content-center h-100">
 
-    <div class="mb-6">
-      <%= f.label :email, class: label_class %>
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: input_class %>
-    </div>
+          <div class="col-md-8 col-lg-7 col-xl-6">
+             <%= image_tag('sing-in.jpg', style: "width:100%;height:590px;",
+              class: "img-fluid", alt: "Phone image")%>
+          </div>
+          <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+            <form>
+              <!-- Email input -->
+              <div class="form-outline mb-4">
+                <%= f.label :email, class: "form-label" %>
+                <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+              </div>
 
-    <div class="mb-6">
-      <%= f.label :password, class: label_class %>
-      <%= f.password_field :password, autocomplete: "current-password", class: input_class %>
-    </div>
+              <!-- Password input -->
+              <div class="form-outline mb-4">
+                <div class="flex">
+                  <%= f.label :password, class: "form-label" %>
+                  <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
+                </div>
+              </div>
+              <div class="d-flex align-items-center mb-4">
+                <% if devise_mapping.rememberable? %>
+                <!-- Checkbox -->
+                  <div class="form-check">
+                    <%= f.label :remember_me , class: "form-check-label"%>
+                    <%= f.check_box :remember_me, class: "form-check-input" %>
+                  </div>
+                 <% end %>&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="#!">Forgot password?</a>
+              </div>
 
-    <div class="mb-6">
-      <% if devise_mapping.rememberable? %>
-        <%= f.check_box :remember_me, class: checkbox_class %>
-        <%= f.label :remember_me %>
-      <% end %>
-    </div>
-
-    <div class="mb-6">
-      <%= f.submit "Sign in", class: button_class(theme: "primary", variant: "expanded") %>
-    </div>
+              <!-- Submit button -->
+              <%= f.submit "Sign In", class: "btn btn-primary btn-block" %>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
   <% end %>
 <% end %>
+
+                   
+                 
