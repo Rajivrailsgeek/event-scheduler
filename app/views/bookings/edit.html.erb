@@ -4,7 +4,7 @@
 
 <br>
 
-<div>
-  <%#= link_to "Show this tmncp", @tmncp %> |
-  <%#= link_to "Back to tmncps", tmncps_path %>
+<div class="d-flex" style="margin: 0;"> 
+  <%= button_to "Destroy", @booking, method: :delete, class:"btn btn-outline-success" %>&nbsp;&nbsp;
+  <%= button_to "Back", {:controller => "bookings", :action => "index" } , :method=>:get, class:"btn btn-outline-success"%>
 </div>

@@ -5,6 +5,7 @@
       <th>Last Name</th>
       <th>Booking Date</th>
       <th>Billing Address</th>
+      <th>Action </th>
     </tr>
     <% @bookings.each do |booking| %>
       <tr>
@@ -13,15 +14,24 @@
         <td><%= booking.booking_date %></td>
         <td><%= booking.billing_address %></td>
 
-       	<td><%= link_to "Edit", edit_booking_path(booking) %></td>
-        <td><%= link_to "show", booking_path(booking) %></td>
-        <td><%= button_to "Destroy", booking, method: :delete %></td>
+       	<td>
+          <%= link_to edit_booking_path(booking) do %>
+            <i class="bi bi-pen"></i>
+          <%end %>&nbsp;&nbsp;
+          <%= link_to booking_path(booking) do %>
+            <i class="bi bi-display"></i>
+          <% end %>&nbsp;&nbsp;
+          <%= link_to booking_path(booking),data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete #{booking.first_name} booking?"} do %>
+            <i class="bi bi-trash red-color" title="Delete Contract"></i>
+          <%end %>
+        </td>
       </tr>
     <% end %>
   </table>
   <%= button_to 'New Booking', {:controller => "bookings", :action => "new" } , :method=>:get, class:"btn btn-primary" %>
-
+  <div class="d-flex justify-content-center">
   <% unless @bookings.empty? %>
     <%= will_paginate @bookings %>
   <% end %>
+  </div>
 </div>
