@@ -69,6 +69,8 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
+  gem "dotenv-rails"
+  
 end
 gem "devise", "~> 4.8", ">= 4.8.1"
 gem "friendly_id", "~> 5.4", ">= 5.4.2"
@@ -81,4 +83,6 @@ gem 'byebug'
 gem "letter_opener"
 gem 'will_paginate', '~> 4.0'
 gem "jquery-rails"
-
+gem "omniauth"
+gem "omniauth-google-oauth2"
+gem "omniauth-rails_csrf_protection","~> 1.0"
