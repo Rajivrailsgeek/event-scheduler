@@ -9,13 +9,21 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
+  # User.omniauth_providers.each do |provider_name|
+  #   if provider_name == :developer
+  #     config.omniauth :developer
+  #   else
+  #     api_key = ENV["#{provider_name.upcase}_API_KEY"]
+  #     api_secret = ENV["#{provider_name.upcase}_API_SECRET"]
+  #     config.omniauth provider_name, api_key, api_secret
+  #   end
+  # end
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
   # config.secret_key = '3de9fc4b24f8c8d74fee3a2a84c75cb6d9560ae3c572c3565395311fc4f1fee0f8cf5e5859bc6c09999ef10d3f3dac25e0fe33873488d95c3d609fa40f0409fe'
-
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
   # config.parent_controller = 'DeviseController'
@@ -25,6 +33,8 @@ Devise.setup do |config|
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
   config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
+  # config.omniauth :google_oauth2, ENV[‘GOOGLE_CLIENT_ID’], ENV[‘GOOGLE_CLIENT_SECRET’]
+  config.omniauth :google_oauth2, 'GOOGLE_CLIENT_ID', 'GOOGLE_CLIENT_SECRET', {}
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
@@ -313,6 +323,5 @@ Devise.setup do |config|
   config.allow_unconfirmed_access_for = 2.days
   config.confirm_within = 3.days
 
-  
 
 end
